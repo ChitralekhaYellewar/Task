@@ -51,10 +51,13 @@ struct MappingSets: Mappable {
     }
     
     static func sortMappingSets(for set: [MappingSets]) -> [MappingSets] {
-        var sortedSet = [MappingSets]()
-        sortedSet = set
-        let element = sortedSet.remove(at: 0)
-        sortedSet.append(element)
-        return sortedSet
+        if set.count > 0 {
+            var sortedSet = [MappingSets]()
+            sortedSet = set
+            let element = sortedSet.remove(at: 0)
+            sortedSet.append(element)
+            return sortedSet
+        }
+        return []
     }
 }
